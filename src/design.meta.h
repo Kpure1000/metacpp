@@ -31,13 +31,13 @@ namespace meta
 {
     
     template<>
-    Type getType<::school::Student>(::school::Student* instance)
+    Type get_type<::school::Student>(::school::Student* instance)
     {
         return Type("Student");
     }
 
     template<>
-    Type getType<::school::Class>(::school::Class* instance)
+    Type get_type<::school::Class>(::school::Class* instance)
     {
         return Type("Class");
     }
