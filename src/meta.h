@@ -43,6 +43,11 @@ namespace meta
 
     class Field
     {
+    public:
+        std::string get_name() { return name; }
+        Type get_type() { return type; }
+
+    private:
         std::string name;
 
         Type type;
@@ -58,6 +63,12 @@ namespace meta
 
     class Class
     {
+    public:
+        std::vector<Field> get_fields()
+        {
+            return fields;
+        }
+    private:
         std::vector<Field> fields;
         // std::vector<Method> methods;
     };
@@ -70,85 +81,85 @@ namespace meta
 
 
     template <typename T>
-    Type get_type(T *instance)
+    inline Type get_type(T *instance)
     {
         return Type();
     }
 
     template<>
-    Type get_type<bool>(bool* instance)
+    inline Type get_type<bool>(bool* instance)
     {
         return Type("bool");
     }
     
     template<>
-    Type get_type<uint8_t>(uint8_t* instance)
+    inline Type get_type<uint8_t>(uint8_t* instance)
     {
         return Type("uint8_t");
     }
     
     template<>
-    Type get_type<uint16_t>(uint16_t* instance)
+    inline Type get_type<uint16_t>(uint16_t* instance)
     {
         return Type("uint16_t");
     }
     
     template<>
-    Type get_type<uint32_t>(uint32_t* instance)
+    inline Type get_type<uint32_t>(uint32_t* instance)
     {
         return Type("uint32_t");
     }
     
     template<>
-    Type get_type<uint64_t>(uint64_t* instance)
+    inline Type get_type<uint64_t>(uint64_t* instance)
     {
         return Type("uint64_t");
     }
     
     template<>
-    Type get_type<int8_t>(int8_t* instance)
+    inline Type get_type<int8_t>(int8_t* instance)
     {
         return Type("int8_t");
     }
     
     template<>
-    Type get_type<int16_t>(int16_t* instance)
+    inline Type get_type<int16_t>(int16_t* instance)
     {
         return Type("int16_t");
     }
     
     template<>
-    Type get_type<int32_t>(int32_t* instance)
+    inline Type get_type<int32_t>(int32_t* instance)
     {
         return Type("int32_t");
     }
     
     template<>
-    Type get_type<int64_t>(int64_t* instance)
+    inline Type get_type<int64_t>(int64_t* instance)
     {
         return Type("int64_t");
     }
     
     template<>
-    Type get_type<float>(float* instance)
+    inline Type get_type<float>(float* instance)
     {
         return Type("float");
     }
 
     template<>
-    Type get_type<double>(double* instance)
+    inline Type get_type<double>(double* instance)
     {
         return Type("double");
     }
 
     template<>
-    Type get_type<std::string>(std::string* instance)
+    inline Type get_type<std::string>(std::string* instance)
     {
         return Type("std::string");
     }
 
     template<>
-    Type get_type<std::vector<int>>(std::vector<int>* instance)
+    inline Type get_type<std::vector<int>>(std::vector<int>* instance)
     {
         return Type("std::vector<int>");
     }

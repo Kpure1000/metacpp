@@ -4,7 +4,10 @@ namespace meta
 {
     Field* Type::get_field_byName(std::string const& name)
     {
-        // TODO: get field by name
-        return nullptr;
+        auto ret = std::find_if(fields.begin(), fields.end(), [&name](auto const& field)
+        {
+            return field.name == name;
+        });
+        return ret != fields.end() ? *ret : nullptr;
     }
 } // namespace meta

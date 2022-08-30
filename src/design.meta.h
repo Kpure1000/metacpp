@@ -1,4 +1,5 @@
-
+#ifndef DESIGN_META_H
+#define DESIGN_META_H
 #include "design.h"
 
 namespace meta::school
@@ -44,3 +45,4 @@ namespace meta
 
 } // namespace meta
 
+#endif 
