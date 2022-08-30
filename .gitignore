@@ -1,0 +1,10 @@
+*/[Bb]uild/
+/[Bb]uild/
+
+*/.vscode/
+/.vscode/
+
+*/[Bb]in/
+/[Bb]in/
+
+.DS_Store
