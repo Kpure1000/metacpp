@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.18)
 
-set(PROJECT_NAME meta-cpp)
+set(PROJECT_NAME metacpp)
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_STANDARD 17)
