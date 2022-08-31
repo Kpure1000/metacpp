@@ -28,21 +28,21 @@ namespace meta::school
 
 } // namespace meta::school
 
-namespace meta
-{
+// namespace meta
+// {
     
-    template<>
-    Type get_type<::school::Student>(::school::Student* instance)
-    {
-        return Type("Student");
-    }
+//     template<>
+//     Type get_type<::school::Student>(::school::Student* instance)
+//     {
+//         return Type("Student");
+//     }
 
-    template<>
-    Type get_type<::school::Class>(::school::Class* instance)
-    {
-        return Type("Class");
-    }
+//     template<>
+//     Type get_type<::school::Class>(::school::Class* instance)
+//     {
+//         return Type("Class");
+//     }
 
-} // namespace meta
+// } // namespace meta
 
 #endif 
