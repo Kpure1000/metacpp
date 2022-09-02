@@ -5,46 +5,39 @@
 #include <iostream>
 #include <vector>
 
-#include "meta.h"
+#include "meta/meta.h"
 
-namespace school
+META_CLASS(Student)
+
+class Student
 {
-    META()
-    class Student
+    META_ACCESS(Student)
+public:
+    Student(std::string const &name, uint32_t number)
+        : name(name), number(number) {}
+
+    bool is_male()
     {
-    public:
-        Student(std::string const &name, uint32_t number)
-            : name(name), number(number) {}
+        return 0x01 & number;
+    }
 
-        META()
-        std::string name;
-        
-        META()
-        uint32_t number;
+private:
+    std::string name;
+    uint32_t number;
+};
 
-        bool is_male()
-        {
-            return 0x01 & number;
-        }
-    };
+class Class
+{
+public:
 
-    META()
-    class Class
+    std::vector<Student *> students;
+
+    std::shared_ptr<Student> monitor_ref;
+
+    Student *at(int index)
     {
-    public:
-    
-        META()
-        std::vector<Student *> students;
-
-        META()
-        std::shared_ptr<Student> monitor_ref;
-
-        Student *at(int index)
-        {
-            return students.at(index);
-        }
-    };
-
-} // namespace school
+        return students.at(index);
+    }
+};
 
 #endif
