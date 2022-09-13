@@ -2,7 +2,7 @@
 #define META_H
 #include <iostream>
 #include <vector>
-
+#include <functional>
 #ifndef META_CLASS
 #define META_CLASS(name) namespace meta { class meta_##name; }
 #endif
@@ -51,7 +51,7 @@ namespace meta
 
         inline bool is_array() { return std::get<4>(*fieldFunc)(); }
 
-        inline constexpr size_t get_typeID() { return std::get<5>(*fieldFunc)(); }
+        inline size_t get_typeID() { return std::get<5>(*fieldFunc)(); }
 
     private:
 

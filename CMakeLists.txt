@@ -12,7 +12,7 @@ include_directories(vendor)
 # set(LIBCLANG_LIB "")
 
 if(WIN32)
-    file(GLOB_RECURSE LIBCLANG_LIB "vendor/libclang.dll")
+    file(GLOB_RECURSE LIBCLANG_LIB "vendor/libclang.lib")
 elseif(APPLE)
     file(GLOB_RECURSE LIBCLANG_LIB "vendor/libclang.dylib")
 elseif(UNIX)
